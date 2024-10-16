@@ -1,0 +1,63 @@
+
+julia@MacBook-Pro-Ulia bash_testing % pwd
+/Users/julia/bash_testing
+julia@MacBook-Pro-Ulia bash_testing % mkdir test1
+julia@MacBook-Pro-Ulia bash_testing % cd test1
+julia@MacBook-Pro-Ulia test1 % touch 1 2 3 
+julia@MacBook-Pro-Ulia test1 %  cd
+julia@MacBook-Pro-Ulia ~ % cd bash_testing
+julia@MacBook-Pro-Ulia bash_testing % cd test1
+julia@MacBook-Pro-Ulia test1 % ls
+1       2       3
+julia@MacBook-Pro-Ulia test1 % cd
+julia@MacBook-Pro-Ulia ~ % cd bash_testing
+julia@MacBook-Pro-Ulia bash_testing % mkdir test2
+julia@MacBook-Pro-Ulia bash_testing % ls
+test1   test2
+ulia@MacBook-Pro-Ulia bash_testing % rmdir test2
+julia@MacBook-Pro-Ulia bash_testing % ls
+test1
+julia@MacBook-Pro-Ulia bash_testing % cd test1
+julia@MacBook-Pro-Ulia test1 % rm 2
+julia@MacBook-Pro-Ulia test1 % ls
+1       3
+julia@MacBook-Pro-Ulia test1 % cd
+ulia@MacBook-Pro-Ulia ~ % cd bash_testing
+julia@MacBook-Pro-Ulia bash_testing % mkdir test3
+julia@MacBook-Pro-Ulia bash_testing % cd test3
+julia@MacBook-Pro-Ulia test3 % touch 1 2
+julia@MacBook-Pro-Ulia test3 % ls
+1       2
+julia@MacBook-Pro-Ulia test3 % cd
+julia@MacBook-Pro-Ulia bash_testing % rm -r test3
+julia@MacBook-Pro-Ulia bash_testing % ls
+test1
+julia@MacBook-Pro-Ulia bash_testing % mkdir test4
+julia@MacBook-Pro-Ulia bash_testing % mv test1/1 test4
+julia@MacBook-Pro-Ulia bash_testing % mv test1/3 test4
+julia@MacBook-Pro-Ulia bash_testing % ls
+test1   test4
+julia@MacBook-Pro-Ulia bash_testing % cd test4
+julia@MacBook-Pro-Ulia test4 % echo "line\nline\nline"> 1
+julia@MacBook-Pro-Ulia test4 % cat 1  
+line
+line
+line
+julia@MacBook-Pro-Ulia test4 % echo "line\nline\nline"> 3
+julia@MacBook-Pro-Ulia test4 % cat 3  
+line
+line
+line
+julia@MacBook-Pro-Ulia test4 % cat 1 3
+line
+line
+line
+line
+line
+line
+julia@MacBook-Pro-Ulia test4 % vi 1
+julia@MacBook-Pro-Ulia test4 % cat 1
+To be or 
+not to be
+that is the question?
+

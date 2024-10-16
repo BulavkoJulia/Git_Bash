@@ -1,0 +1,73 @@
+{\rtf1\ansi\ansicpg1251\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 julia@MacBook-Pro-Ulia bash_testing % mkdir test3\
+\
+julia@MacBook-Pro-Ulia bash_testing % for i in \{4..6\}; do echo -e "row1\\nrow2\\nrow3\\nrow4" > test3/$i; done\
+julia@MacBook-Pro-Ulia bash_testing % cd test3\
+julia@MacBook-Pro-Ulia test3 % grep "row2" 5\
+row2\
+julia@MacBook-Pro-Ulia test3 % cd\
+julia@MacBook-Pro-Ulia ~ % cd bash_testing\
+julia@MacBook-Pro-Ulia bash_testing % grep -r "row" test3\
+test3/6:row1\
+test3/6:row2\
+test3/6:row3\
+test3/6:row4\
+test3/4:row1\
+test3/4:row2\
+test3/4:row3\
+test3/4:row4\
+test3/5:row1\
+test3/5:row2\
+test3/5:row3\
+test3/5:row4\
+julia@MacBook-Pro-Ulia bash_testing % grep -c "row" test3/6\
+\
+4\
+julia@MacBook-Pro-Ulia bash_testing % find test3 -name "5"\
+\
+test3/5\
+julia@MacBook-Pro-Ulia bash_testing % find test3 -name "5" -exec rm \{\} \\;\
+julia@MacBook-Pro-Ulia bash_testing % cd test3\
+julia@MacBook-Pro-Ulia test3 % echo "test">4\
+julia@MacBook-Pro-Ulia test3 % sed -i '' 's/test/fail/g' 4 \
+julia@MacBook-Pro-Ulia test3 % echo "test" >> 4\
+julia@MacBook-Pro-Ulia bash_testing % ps -ef\
+julia@MacBook-Pro-Ulia test3 % cd ~\
+julia@MacBook-Pro-Ulia ~ % ps -ef | grep 666\
+julia@MacBook-Pro-Ulia ~ % kill -9 666\
+julia@MacBook-Pro-Ulia bash_testing % ping rusau.net\
+julia@MacBook-Pro-Ulia bash_testing % ping -c 5 rusau.net\
+PING rusau.net (5.181.161.75): 56 data bytes\
+64 bytes from 5.181.161.75: icmp_seq=0 ttl=50 time=30.873 ms\
+64 bytes from 5.181.161.75: icmp_seq=1 ttl=47 time=62.895 ms\
+64 bytes from 5.181.161.75: icmp_seq=2 ttl=50 time=30.603 ms\
+64 bytes from 5.181.161.75: icmp_seq=3 ttl=53 time=20.815 ms\
+64 bytes from 5.181.161.75: icmp_seq=4 ttl=44 time=37.509 ms\
+\
+--- rusau.net ping statistics ---\
+5 packets transmitted, 5 packets received, 0.0% packet loss\
+round-trip min/avg/max/stddev = 20.815/36.539/62.895/14.214 ms\
+julia@MacBook-Pro-Ulia bash_testing % curl -X 'GET' \\\
+  'https://petstore.swagger.io/v2/pet/findByStatus?status=pending,available,sold' \\\
+  -H 'accept: application/json'\
+jjulia@MacBook-Pro-Ulia bash_testing % curl -X 'POST' \\\
+  'https://petstore.swagger.io/v2/user' \\\
+  -H 'accept: application/json' \\\
+  -H 'Content-Type: application/json' \\\
+  -d '\{\
+  "id": 0,\
+  "username": "string",\
+  "firstName": "string",\
+  "lastName": "string",\
+  "email": "string",\
+  "password": "string",\
+  "phone": "string",\
+  "userStatus": 0\
+\}'\
+\{"code":200,"type":"unknown","message":"9223372036854774485"\}%}
